@@ -5,3 +5,4 @@ echo $LastTag
 
 LastCommitsMessages=$(git log $LastTag..HEAD --oneline --pretty=format:"%s")
 echo $LastCommitsMessages
+
