@@ -1,0 +1,15 @@
+name: 'Generates relnotes'
+description: 'Generates release notes based on commits'
+author: 'Louis-Guillaume MORAND'
+branding:
+  icon: 'award'  
+  color: 'orange'
+inputs:
+  toTag:
+    description: 'Defines the newly tag created'
+outputs:
+  relnotes:
+    description: The generated release notes
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
