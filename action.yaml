@@ -5,7 +5,7 @@ branding:
   icon: 'award'  
   color: 'orange'
 inputs:
-  toTag:
+  previousTag:
     description: 'Defines the newly tag created'
 outputs:
   relnotes:
