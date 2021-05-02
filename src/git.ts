@@ -25,12 +25,14 @@ export async function getLastTag(): Promise<string> {
                     options);
   
 
-    core.debug(`The last tag is ${lastTag}`);
-    if (lastTag == null) 
+    
+    if (lastTag == null || lastTag == '') 
     {
       core.setFailed(`No tag has been found`);
     }
-    
+
+    core.debug(`The last tag is ${lastTag}`);
+
     return lastTag;
 }
 
@@ -61,7 +63,7 @@ export async function getCommits(tag: string): Promise<string> {
     
     core.debug(`The commit messages are ${messages}`);
 
-    if (messages == null) 
+    if (messages == null || messages == '') 
     {
       core.warning(`No messages have been found`);
       messages= 'N/A';

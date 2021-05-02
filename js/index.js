@@ -14,7 +14,7 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
 };
@@ -37,12 +37,13 @@ const io = __importStar(require("./io"));
 function start() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            // retrieving token
+            // retrieving parameters
             const token = core.getInput("githubToken");
-            // retrieving newTag
             const newTag = core.getInput("newTag");
-            // retrieving artifact mode
             const isChangeLogEnabled = core.getInput("generateArtifact");
+            core.debug("Token: ${token}");
+            core.debug("Tag: ${newTag}");
+            core.debug("Generate changelog: ${isChangeLogEnabled}");
             // retrieving tag
             const tag = yield git.getLastTag();
             // retrieving history message

@@ -14,7 +14,7 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
 };
@@ -49,10 +49,10 @@ function getLastTag() {
         yield exec.exec('git', ['describe',
             '--abbrev=0',
             '--tags'], options);
-        core.debug(`The last tag is ${lastTag}`);
-        if (lastTag == null) {
+        if (lastTag == null || lastTag == '') {
             core.setFailed(`No tag has been found`);
         }
+        core.debug(`The last tag is ${lastTag}`);
         return lastTag;
     });
 }
@@ -78,7 +78,7 @@ function getCommits(tag) {
             '--oneline',
             '--pretty=format:"%s"'], options);
         core.debug(`The commit messages are ${messages}`);
-        if (messages == null) {
+        if (messages == null || messages == '') {
             core.warning(`No messages have been found`);
             messages = 'N/A';
         }

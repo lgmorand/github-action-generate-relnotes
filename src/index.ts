@@ -4,16 +4,17 @@ import * as release from './release'
 import * as text from './text'
 import * as io from './io'
 
-export async function start(): Promise<void> {
+export async function start(): Promise<void> 
+{
   try {
-    // retrieving token
+    // retrieving parameters
     const token = core.getInput("githubToken");
-   
-    // retrieving newTag
     const newTag = core.getInput("newTag"); 
-
-    // retrieving artifact mode
     const isChangeLogEnabled = core.getInput("generateArtifact"); 
+
+    core.debug("Token: ${token}");
+    core.debug("Tag: ${newTag}");
+    core.debug("Generate changelog: ${isChangeLogEnabled}");
 
     // retrieving tag
     const tag = await git.getLastTag();
