@@ -5,8 +5,15 @@ branding:
   icon: 'award'  
   color: 'orange'
 inputs:
-  previousTag:
-    description: 'Defines the newly tag created'
+  githubToken:
+    description: 'Token to access GitHub'
+    required: true
+  newTag:
+    description: 'New tag'
+    required: true
+  generateArtifact:
+    description: 'Generates a changelog.txt'
+    required: true
 outputs:
   relnotes:
     description: The generated release notes

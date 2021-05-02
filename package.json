@@ -2,8 +2,9 @@
   "name": "github-action-generate-relnotes",
   "version": "1.0.0",
   "description": "GitHub Action which generates release notes from commits messages",
-  "main": "index.js",
+  "main": "js/index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,11 @@
   "dependencies": {
     "@actions/core": "^1.2.7",
     "@actions/exec": "^1.0.4",
-    "@actions/github": "^4.0.0"
+    "@actions/github": "^4.0.0",
+    "actions-toolkit": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.4"
   },
   "homepage": "https://github.com/lgmorand/github-action-generate-relnotes#readme"
 }
