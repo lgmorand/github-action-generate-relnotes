@@ -20,20 +20,24 @@ export async function start(): Promise<void>
     const tag = await git.getLastTag();
 
     // retrieving history message
-    const messages = await git.getCommits(tag)
-    const releaseNotes = text.toList(messages);
-    core.debug(releaseNotes);
-    
-    // create release
-    release.createReleaseDraft(newTag, token, releaseNotes);
-    
-    if (isChangeLogEnabled)
+    if (tag != '')
     {
-      io.writeOutput("changelog.txt", releaseNotes);
+      const messages = await git.getCommits(tag)
+      const releaseNotes = text.toList(messages);
+      core.debug(releaseNotes);
+      
+      // create release
+      release.createReleaseDraft(newTag, token, releaseNotes);
+      
+      if (isChangeLogEnabled)
+      {
+        io.writeOutput("changelog.txt", releaseNotes);
+      }
+  
+      // set output variable 
+      core.setOutput("relnotes", releaseNotes);
     }
-
-    // set output variable 
-    core.setOutput("relnotes", releaseNotes);
+    
   } 
   catch (error) 
   {
