@@ -19,4 +19,4 @@ outputs:
     description: The generated release notes
 runs:
   using: 'node12'
-  main: 'dist/index.js'
+  main: 'js/index.js'
