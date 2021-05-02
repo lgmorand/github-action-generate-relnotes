@@ -18,12 +18,12 @@ jobs:
         id: relnotes
         uses: ./
         with:
-          githubToken: $GITHUB_TOKEN
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
           newTag: v2.0.0
           generateArtifact: true
         
       - name: Test the generated release notes
-        run: echo ${{ steps.relnotes.outputs.relnotes }}
+        run: echo "${{ steps.relnotes.outputs.relnotes }}"
         
       - uses: actions/upload-artifact@v2
         with:

@@ -24,7 +24,7 @@ export async function start(): Promise<void>
     {
       const messages = await git.getCommits(tag)
       const releaseNotes = text.toList(messages);
-      core.debug(releaseNotes);
+      core.debug("Releases notes: ${releaseNotes}");
       
       // create release
       release.createReleaseDraft(newTag, token, releaseNotes);

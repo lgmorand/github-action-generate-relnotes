@@ -47,16 +47,18 @@ function start() {
             // retrieving tag
             const tag = yield git.getLastTag();
             // retrieving history message
-            const messages = yield git.getCommits(tag);
-            const releaseNotes = text.toList(messages);
-            core.debug(releaseNotes);
-            // create release
-            release.createReleaseDraft(newTag, token, releaseNotes);
-            if (isChangeLogEnabled) {
-                io.writeOutput("changelog.txt", releaseNotes);
+            if (tag != '') {
+                const messages = yield git.getCommits(tag);
+                const releaseNotes = text.toList(messages);
+                core.debug("Releases notes: ${releaseNotes}");
+                // create release
+                release.createReleaseDraft(newTag, token, releaseNotes);
+                if (isChangeLogEnabled) {
+                    io.writeOutput("changelog.txt", releaseNotes);
+                }
+                // set output variable 
+                core.setOutput("relnotes", releaseNotes);
             }
-            // set output variable 
-            core.setOutput("relnotes", releaseNotes);
         }
         catch (error) {
             core.setFailed(error.message);
