@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Test the action
+      - name: Generate release + changelog
         id: relnotes
         uses: ./
         with:
