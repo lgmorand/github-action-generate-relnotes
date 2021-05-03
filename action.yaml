@@ -14,6 +14,7 @@ inputs:
   generateArtifact:
     description: 'Generates a changelog.txt'
     required: true
+    default: true
 outputs:
   relnotes:
     description: The generated release notes

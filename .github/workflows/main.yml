@@ -1,9 +1,11 @@
 name: CI
 
 on:
-  push:
-  pull_request:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to create'     
+        required: true
 
 jobs:
   build:
@@ -14,12 +16,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Test the action
+      - name: Generate release + changelog
         id: relnotes
         uses: ./
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          newTag: v2.0.0
+          newTag: ${{ github.event.inputs.tag }}"
           generateArtifact: true
         
       - name: Test the generated release notes

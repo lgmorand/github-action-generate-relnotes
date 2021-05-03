@@ -27,7 +27,7 @@ export async function start(): Promise<void>
       core.debug("Releases notes: ${releaseNotes}");
       
       // create release
-      release.createReleaseDraft(newTag, token, releaseNotes);
+      release.createRelease(newTag, token, releaseNotes);
       
       if (isChangeLogEnabled)
       {
