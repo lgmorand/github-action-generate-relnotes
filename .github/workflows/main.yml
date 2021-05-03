@@ -4,6 +4,10 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to create'     
+        required: true
 
 jobs:
   build:
@@ -19,7 +23,7 @@ jobs:
         uses: ./
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          newTag: v2.0.0
+          newTag: ${{ github.event.inputs.tag }}"
           generateArtifact: true
         
       - name: Test the generated release notes
