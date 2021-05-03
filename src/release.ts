@@ -2,7 +2,7 @@ import * as core from '@actions/core'
 import * as github from '@actions/github'
 import * as text from './text'
 
-export async function createReleaseDraft(
+export async function createRelease(
   newTag: string,
   repoToken: string,
   releaseNotes: string
