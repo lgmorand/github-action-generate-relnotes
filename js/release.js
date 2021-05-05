@@ -28,10 +28,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createReleaseDraft = void 0;
+exports.createRelease = void 0;
 const core = __importStar(require("@actions/core"));
 const github = __importStar(require("@actions/github"));
-function createReleaseDraft(newTag, repoToken, releaseNotes) {
+function createRelease(newTag, repoToken, releaseNotes) {
     return __awaiter(this, void 0, void 0, function* () {
         const octokit = github.getOctokit(repoToken);
         const response = yield octokit.repos.createRelease({
@@ -48,4 +48,4 @@ function createReleaseDraft(newTag, repoToken, releaseNotes) {
         return response.data.html_url;
     });
 }
-exports.createReleaseDraft = createReleaseDraft;
+exports.createRelease = createRelease;

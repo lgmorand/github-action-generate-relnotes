@@ -52,7 +52,7 @@ function start() {
                 const releaseNotes = text.toList(messages);
                 core.debug("Releases notes: ${releaseNotes}");
                 // create release
-                release.createReleaseDraft(newTag, token, releaseNotes);
+                release.createRelease(newTag, token, releaseNotes);
                 if (isChangeLogEnabled) {
                     io.writeOutput("changelog.txt", releaseNotes);
                 }
