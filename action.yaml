@@ -14,10 +14,10 @@ inputs:
   generateArtifact:
     description: 'Generates a changelog.txt'
     required: true
-    default: true
+    default: 'true'
 outputs:
   relnotes:
     description: The generated release notes
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'js/index.js'

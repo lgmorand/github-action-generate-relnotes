@@ -16,14 +16,14 @@
   "bugs": {
     "url": "https://github.com/lgmorand/github-action-generate-relnotes/issues"
   },
-  "dependencies": {
-    "@actions/core": "^1.2.7",
-    "@actions/exec": "^1.0.4",
-    "@actions/github": "^4.0.0",
-    "actions-toolkit": "^6.0.1"
-  },
   "devDependencies": {
     "typescript": "^3.7.4"
   },
-  "homepage": "https://github.com/lgmorand/github-action-generate-relnotes#readme"
+  "homepage": "https://github.com/lgmorand/github-action-generate-relnotes#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^5.1.1",
+    "actions-toolkit": "^6.0.1"
+  }
 }
