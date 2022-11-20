@@ -14,7 +14,7 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
 };
@@ -34,12 +34,12 @@ const github = __importStar(require("@actions/github"));
 function createRelease(newTag, repoToken, releaseNotes) {
     return __awaiter(this, void 0, void 0, function* () {
         const octokit = github.getOctokit(repoToken);
-        const response = yield octokit.repos.createRelease({
+        const response = yield octokit.rest.repos.createRelease({
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
             tag_name: newTag,
             name: newTag,
-            body: releaseNotes, // our comments
+            body: releaseNotes,
         });
         if (response.status != 201) {
             throw new Error(`Failed to create the release: ${response.status}`);
