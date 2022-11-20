@@ -8,7 +8,7 @@ export async function createRelease(
 ): Promise<string> {
   const octokit = github.getOctokit(repoToken);
 
-  const response = await octokit.repos.createRelease({
+  const response = await octokit.rest.repos.createRelease({
     owner: github.context.repo.owner,
     repo: github.context.repo.repo,
     tag_name: newTag, // our tag
