@@ -19,5 +19,5 @@ outputs:
   relnotes:
     description: The generated release notes
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'js/index.js'
