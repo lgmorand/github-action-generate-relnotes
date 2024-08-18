@@ -58,7 +58,7 @@ GitHub Action to generate release with release notes based on commits
 ## Example Syntax
 <span id="syntax"></span>
 
-[Example Workflow .github/workflows/main.yml](./github/workflows/main.yml](https://github.com/Zheng-Bote/github-action-generate-relnotes/blob/main/.github/workflows/main.yml)
+[Example Workflow: .github/workflows/main.yml](https://github.com/Zheng-Bote/github-action-generate-relnotes/blob/main/.github/workflows/main.yml)
 
 ```yaml
 - uses: actions/checkout@v4
