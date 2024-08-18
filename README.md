@@ -1,5 +1,10 @@
 # github-action-generate-relnotes
 
+## Status
+
+[![CI](https://github.com/Zheng-Bote/github-action-generate-relnotes/actions/workflows/main.yml/badge.svg)](https://github.com/Zheng-Bote/github-action-generate-relnotes/actions/workflows/main.yml)
+![ops](https://img.shields.io/badge/Status-v1.0.1_works-green)
+
 ## WARNING !!!
 
 They updated the version of @actions/github AFTER the publication of the book. Depending on the version of the NPM module, the method is not exactly the same
