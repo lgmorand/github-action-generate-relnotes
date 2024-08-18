@@ -44,6 +44,9 @@ They updated the version of @actions/github AFTER the publication of the book. D
 
 GitHub Action to generate release with release notes based on commits
 
+(currently using Node.js v20)
+
+
 ## Authors
 <span id="authors"></span>
 
