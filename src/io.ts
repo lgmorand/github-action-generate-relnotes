@@ -2,7 +2,7 @@ import * as core from "@actions/core";
 import * as fs from "fs";
 
 /**
- * Writes into a fil
+ * Writes into a file
  */
 export function writeOutput(outputFile: string, text: string): void {
   if (outputFile && text) {
