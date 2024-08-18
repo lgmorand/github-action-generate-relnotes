@@ -1,11 +1,36 @@
-# github-action-generate-relnotes
+<div id="top"></div>
+
+<div align="center">
+  <h3>github-action-generate-relnotes</h3>
+</div>
+
+<br/>
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#brief">Brief</a></li>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#authors">Authors</a></li>
+    <li><a href="#syntax">Syntax</a></li>
+  </ol>
+</details>
+<br/>
+
+
+## Brief
+<span id="brief"></span>
+
+GitHub Action to generate release with release notes based on commits
 
 ## Status
+<span id="status"></span>
 
 [![CI](https://github.com/Zheng-Bote/github-action-generate-relnotes/actions/workflows/main.yml/badge.svg)](https://github.com/Zheng-Bote/github-action-generate-relnotes/actions/workflows/main.yml)
 ![ops](https://img.shields.io/badge/Status-v1.0.1_works-green)
 
-## WARNING !!!
+
+### WARNING !!!
 
 They updated the version of @actions/github AFTER the publication of the book. Depending on the version of the NPM module, the method is not exactly the same
 
@@ -15,10 +40,25 @@ They updated the version of @actions/github AFTER the publication of the book. D
 | 5.X     | octokit.rest.repos.createRelease() |
 
 ## Description
+<span id="description"></span>
 
-Sample GitHub Action to generate release notes based on commits
+GitHub Action to generate release with release notes based on commits
 
-(see also: .github/workflows/main.yml)
+## Authors
+<span id="authors"></span>
+
+- [Louis-Guillaume MORAND](https://github.com/lgmorand)
+- [Zheng Robert](https://www.robert.hase-zheng.net/) 
+
+***forked*** from: [Louis-Guillaume MORAND : github-action-generate-relnotes](https://github.com/lgmorand/github-action-generate-relnotes)
+
+***recommendation***: This book from Louis-Guillaume is the best one about Github Actions so far:
+[GitHub Actions : A pratical guide](https://github.com/lgmorand/book-github-actions-content)
+
+## Example Syntax
+<span id="syntax"></span>
+
+[Example Workflow .github/workflows/main.yml](./github/workflows/main.yml)
 
 ```yaml
 - uses: actions/checkout@v4
@@ -35,9 +75,8 @@ Sample GitHub Action to generate release notes based on commits
     generateArtifact: true
 ```
 
-## Comment
+### the end
 
-a comment from a [user/reader](https://github.com/Zheng-Bote/):
+:vulcan_salute:
 
-This book from Louis-Guillaume is the best one about Github Actions:
-[GitHub Actions : A pratical guide](https://github.com/lgmorand/book-github-actions-content)
+<p align="right">(<a href="#top">back to top</a>)</p>
