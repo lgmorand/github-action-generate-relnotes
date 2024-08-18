@@ -35,6 +35,7 @@ export async function start(): Promise<void> {
       core.setOutput("relnotes", releaseNotes);
     }
   } catch (error: any) {
+    // need type
     core.setFailed(error.message);
   }
 }
