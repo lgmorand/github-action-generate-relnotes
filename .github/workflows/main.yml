@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Tag to create'     
+        description: "Tag to create"
         required: true
 
 jobs:
@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          fetch-tags: true
 
       - name: Generate release + changelog
         id: relnotes
@@ -23,10 +24,10 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           newTag: ${{ github.event.inputs.tag }}
           generateArtifact: true
-        
+
       - name: Test the generated release notes
         run: echo "${{ steps.relnotes.outputs.relnotes }}"
-        
+
       - uses: actions/upload-artifact@v3
         with:
           name: changelog

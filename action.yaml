@@ -1,23 +1,24 @@
-name: 'Generates relnotes'
-description: 'Generates release notes based on commits'
-author: 'Louis-Guillaume MORAND'
+name: "Generates relnotes"
+description: "Generates release notes based on commits"
+author: "Louis-Guillaume MORAND"
 branding:
-  icon: 'award'  
-  color: 'orange'
+  icon: "award"
+  color: "orange"
 inputs:
   githubToken:
-    description: 'Token to access GitHub'
+    description: "Token to access GitHub"
     required: true
+    default: ${{ secrets.GITHUB_TOKEN }}
   newTag:
-    description: 'New tag'
+    description: "New tag"
     required: true
   generateArtifact:
-    description: 'Generates a changelog.txt'
+    description: "Generates a changelog.txt"
     required: true
-    default: 'true'
+    default: "true"
 outputs:
   relnotes:
     description: The generated release notes
 runs:
-  using: 'node20'
-  main: 'js/index.js'
+  using: "node20"
+  main: "js/index.js"

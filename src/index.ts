@@ -1,16 +1,15 @@
-import * as core from '@actions/core'
-import * as git from './git'
-import * as release from './release'
-import * as text from './text'
-import * as io from './io'
+import * as core from "@actions/core";
+import * as git from "./git";
+import * as release from "./release";
+import * as text from "./text";
+import * as io from "./io";
 
-export async function start(): Promise<void> 
-{
+export async function start(): Promise<void> {
   try {
     // retrieving parameters
     const token = core.getInput("githubToken");
-    const newTag = core.getInput("newTag"); 
-    const isChangeLogEnabled = core.getInput("generateArtifact"); 
+    const newTag = core.getInput("newTag");
+    const isChangeLogEnabled = core.getInput("generateArtifact");
 
     core.debug("Token: ${token}");
     core.debug("Tag: ${newTag}");
@@ -20,28 +19,23 @@ export async function start(): Promise<void>
     const tag = await git.getLastTag();
 
     // retrieving history message
-    if (tag != '')
-    {
-      const messages = await git.getCommits(tag)
+    if (tag != "") {
+      const messages = await git.getCommits(tag);
       const releaseNotes = text.toList(messages);
       core.debug("Releases notes: ${releaseNotes}");
-      
+
       // create release
       release.createRelease(newTag, token, releaseNotes);
-      
-      if (isChangeLogEnabled)
-      {
+
+      if (isChangeLogEnabled) {
         io.writeOutput("changelog.txt", releaseNotes);
       }
-  
-      // set output variable 
+
+      // set output variable
       core.setOutput("relnotes", releaseNotes);
     }
-    
-  } 
-  catch (error) 
-  {
-    core.setFailed(error.message)
+  } catch (error: any) {
+    core.setFailed(error.message);
   }
 }
 
