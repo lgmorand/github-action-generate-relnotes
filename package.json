@@ -1,7 +1,7 @@
 {
   "name": "github-action-generate-relnotes",
   "version": "1.0.0",
-  "description": "GitHub Action which generates release notes from commits messages",
+  "description": "GitHub Action which generates release and release notes from commits messages",
   "main": "js/index.js",
   "scripts": {
     "build": "tsc",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lgmorand/github-action-generate-relnotes.git"
+    "url": "git+https://github.com/Zheng-Bote/github-action-generate-relnotes.git"
   },
-  "author": "Louis-Guillaume MORAND",
+  "author": "Louis-Guillaume MORAND, ZHENG Robert",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lgmorand/github-action-generate-relnotes/issues"
+    "url": "https://github.com/Zheng-Bote/github-action-generate-relnotes/issues"
   },
   "devDependencies": {
     "typescript": "^3.7.4"
