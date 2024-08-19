@@ -71,7 +71,8 @@ GitHub Action to generate release with release notes based on commits
 
 - name: Generate release + changelog
   id: relnotes
-  uses: ./
+  # uses: ./
+  uses: Zheng-Bote/github-action-generate-relnotes@v1
   with:
     githubToken: ${{ secrets.GITHUB_TOKEN }}
     newTag: ${{ github.event.inputs.tag }}
