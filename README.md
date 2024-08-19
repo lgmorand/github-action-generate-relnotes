@@ -16,7 +16,7 @@ Sample GitHub Action to generate release notes based on commits
 
 
 ``` yaml
-- uses: actions/checkout@v2
+- uses: actions/checkout@v4
   with:
     fetch-depth: 0
 
