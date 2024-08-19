@@ -1,6 +1,6 @@
 name: "Generates relnotes"
 description: "Generates release notes based on commits"
-author: "Louis-Guillaume MORAND"
+author: "Louis-Guillaume MORAND, ZHENG Robert"
 branding:
   icon: "award"
   color: "orange"
