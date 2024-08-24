@@ -23,7 +23,7 @@ exports.writeOutput = void 0;
 const core = __importStar(require("@actions/core"));
 const fs = __importStar(require("fs"));
 /**
- * Writes into a fil
+ * Writes into a file
  */
 function writeOutput(outputFile, text) {
     if (outputFile && text) {

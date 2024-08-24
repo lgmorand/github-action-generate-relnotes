@@ -2,7 +2,7 @@ import * as core from '@actions/core'
 import * as fs from 'fs'
 
 /**
- * Writes into a fil
+ * Writes into a file
  */
  export function writeOutput(
     outputFile: string, text: string
@@ -16,7 +16,7 @@ import * as fs from 'fs'
       {
         fs.writeFileSync(outputFile, text)
       } 
-      catch (error) 
+      catch (error: any) 
       {
         core.warning(`Could not write file - ${error.message}`)
       }

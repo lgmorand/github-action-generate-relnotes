@@ -39,7 +39,7 @@ export async function start(): Promise<void>
     }
     
   } 
-  catch (error) 
+  catch (error: any) 
   {
     core.setFailed(error.message)
   }

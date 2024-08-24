@@ -6,13 +6,16 @@ on:
       tag:
         description: 'Tag to create'     
         required: true
+        
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -27,7 +30,7 @@ jobs:
       - name: Test the generated release notes
         run: echo "${{ steps.relnotes.outputs.relnotes }}"
         
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: changelog
           path: changelog.txt
