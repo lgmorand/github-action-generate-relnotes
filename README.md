@@ -16,7 +16,7 @@ Sample GitHub Action to generate release notes based on commits
 
 
 ``` yaml
-- uses: actions/checkout@v4
+- uses: actions/checkout@v5
   with:
     fetch-depth: 0
 
@@ -28,3 +28,4 @@ Sample GitHub Action to generate release notes based on commits
     newTag: ${{ github.event.inputs.tag }}
     generateArtifact: true
 ```
+
